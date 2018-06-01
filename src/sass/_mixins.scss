@@ -1,0 +1,15 @@
+@mixin title(){ 
+    display: inline-block;
+    margin: 20px 20px 20px 20px;
+    font-size: 20px; 
+    }
+@mixin botoes(){ 
+    border-color: rgb(187, 5, 5);;
+    color: rgb(187, 5, 5);
+    width: 100%;
+    margin: 30px auto;
+    position: relative;
+    font-size: 10px;
+    text-align: left;
+    height: 25px;  
+}

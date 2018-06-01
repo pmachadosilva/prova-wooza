@@ -1,0 +1,37 @@
+@import '_variables';
+
+//Estilos Globais
+:host{
+    //Mantendo Layout default para desktop
+    @media #{$mq-desktop} { 
+        div.content{
+            width: 95%;
+            margin: 100px auto;
+            position: relative;
+        }
+    } 
+    //Layout Mobile se Baseando em min 1px - max 500px
+    @media #{$mq-mobile-min} and #{$mq-mobile-max} {
+       
+        .bg-fundo {
+            width: 80% !important;
+            min-height: 550px !important;
+        }
+        .card {
+            width: 80% !important;
+        }
+        .btn-acao {
+            margin: 10px auto !important;
+        }
+        select {
+            width: 80% !important;
+        }
+    
+    } 
+    @media #{$mq-desktop-max} { 
+        
+    }
+     
+      
+}  
+

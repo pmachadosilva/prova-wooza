@@ -1,0 +1,118 @@
+<div class="menu">
+        <!-- <div class="menu-item">
+            <i class="material-icons">assignment_ind</i>
+            <label>Plataformas</label>
+        </div>
+        
+        <div class="menu-item">
+            <i class="material-icons">assignment_ind</i>
+            <label>Dados Pessoais</label>
+        </div> -->
+        <img src="../assets/imgs/logo.png"  class="logo-wooza">
+</div>
+<div class="content">
+   
+        <div class="card">
+                <h1>Selecione uma Categoria</h1>
+                <select #selectedCategoria cancelText="Cancelar" okText="Selecionar" (change)="getPlanos($event.target.value)">
+                    <option value="">Selecione uma Categoria</option>
+                    <option *ngFor="let plat of plataf?.plataformas;" [value]="plat.sku">{{ plat.nome }} - {{ plat.descricao }}</option>
+                </select>
+                <h1>Selecione um Plano</h1>
+                <select #selectedPlano [disabled]="!plan" cancelText="Cancelar" okText="Selecionar">
+                        <option value="">Selecione um Plano</option>                
+                    <option *ngFor="let pla of plan?.planos;" [value]="pla.sku">{{ pla.franquia }} - {{ pla.valor }}</option>
+                </select>
+            </div>   
+
+            <div class="bg-fundo">
+                    
+            <form [formGroup]="formulario">   
+                        <div class="bg-content" (ngSubmit)="cadastroUsuario()"> 
+                            <h1>DADOS PESSOAIS</h1>
+                                    <div class="div-input">
+                                        <label><i class="material-icons md-48">face</i></label>
+                                        <input 
+                                            placeholder="Informe seu nome" 
+                                            type="text"
+                                            formControlName="nome">
+                                    </div>
+                                   
+                                    <div *ngIf="!formulario.get('nome').valid && formulario.get('nome').touched" class="div-form">Informe um nome válido</div>
+                                   
+                                    <div class="div-input">
+                                        <label ><i class="material-icons md-48">email</i></label>
+                                        <input 
+                                            placeholder="Informe seu e-mail" 
+                                            type="tel" 
+                                            maxlength="150"
+                                            formControlName="email">        
+                                    </div>
+                                    <div *ngIf="!formulario.get('email').valid && formulario.get('email').touched" class="div-form">Informe um e-mail correto</div>
+                                    <div style="display: none">
+                                        <input type="hidden">
+                                    </div>
+            
+                                    <div class="div-input">
+                                            <label ><i class="material-icons md-48">date_range</i></label>
+                                            <input 
+                                                placeholder="Informe a data de nascimento" 
+                                                type="tel" 
+                                                maxlength="20"
+                                                formControlName="nascimento"
+                                                [textMask]="{mask: maskNascimento}"
+                                                >        
+                                            
+                                        </div>
+                                        <div *ngIf="!formulario.get('nascimento').valid && formulario.get('nascimento').touched" class="div-form">Informe a data de nascimento correta</div>
+                                        <div style="display: none">
+                                            <input type="hidden">
+                                        </div>
+                
+              
+                                    <div class="div-input">
+                                        <label ><i class="material-icons md-48">description</i></label>
+                                        <input 
+                                            placeholder="Informe seu cpf" 
+                                            type="tel" 
+                                            maxlength="20"
+                                            formControlName="cpf"
+                                            [textMask]="{mask: maskCpf}"
+                                            >        
+                                        
+                                    </div>
+                                    <div *ngIf="!formulario.get('cpf').valid && formulario.get('cpf').touched" class="div-form">Informe um cpf correto</div>
+                                    <div style="display: none">
+                                        <input type="hidden">
+                                    </div>
+            
+                                    <div class="div-input">
+                                            <label ><i class="material-icons md-48">phone</i></label>
+                                            <input 
+                                                placeholder="Informe seu telefone" 
+                                                type="tel" 
+                                                maxlength="20"
+                                                formControlName="telefone"
+                                                [textMask]="{mask: maskTelefone}"
+                                                >        
+                                            
+                                        </div>
+                                        <div *ngIf="!formulario.get('telefone').valid && formulario.get('telefone').touched" class="div-form">Informe o telefone corretamente</div>
+                                        <div style="display: none">
+                                            <input type="hidden">
+                                        </div>
+                                    <div class="btn-acao">
+                                        <button ion-button   full  class="button-danger">
+                                            <img src="assets/images/svg-loaders/oval.svg" *ngIf="isLoading" />
+                                            <span *ngIf="!isLoading">CANCELAR</span>
+                                        </button>
+                                            <button ion-button [disabled]="!formulario.valid"  full class="button-primary" (click)="cadastroUsuario(selectedPlano.value)">
+                                            <img src="assets/images/svg-loaders/oval.svg" *ngIf="isLoading" />
+                                            <span *ngIf="!isLoading">ENVIAR</span>
+                                        </button>
+                                    </div>
+                    </div>
+                </form>
+            </div>   
+    
+</div>

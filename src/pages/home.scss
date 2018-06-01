@@ -1,0 +1,201 @@
+//Importando scss globais
+@import '../sass/_variables';
+@import '../sass/_mixins';
+@import '../sass/_styles';
+
+:host {
+    .menu {
+        position: fixed;
+        width: 100%;
+        opacity: 0.9;
+        top: 0;
+        background-color: #ccc;
+        height: 60px;
+        margin-bottom: 20px;
+        text-align: center;
+        z-index: 9999999;        
+        i {
+            text-align: center;
+            margin: 0 auto;
+            position: relative;
+            font-size: 30px;
+            padding: 5px 10px 10px 10px;
+        }
+        span { 
+            display: block;
+            font-size: 12px;
+            text-align: center;
+        }
+    }
+    .menu-item {
+        position: relative;
+        width: 150px;
+        display: inline-grid;
+        label {
+            font-size: 12px;
+            margin: 0px auto;
+            bottom: 10px;
+            position: relative;
+        }
+    }
+    .content {
+        margin: 100px auto;
+        text-align: center;
+    }
+    .logo-wooza {
+        display: block;
+        margin: 10px auto;
+        position: absolute;
+        width: 300px;
+        left: -50px;
+        text-align: left;
+    }
+
+//Plataformas
+
+    select {
+        height: 30px;
+        background-color: #fff;
+        width: 80%
+        
+    }
+    .card {
+        background-color: #fff;
+        width: 60%;
+        margin: 0 auto;
+        position: relative;
+        min-height: 280px;
+        padding: 10px 10px 10px 10px;
+        -moz-box-shadow:0 0 10px #00000066;
+        -webkit-box-shadow:0 0 10px #00000066;
+        box-shadow:0 0 10px #00000066;
+    }
+
+//Cadastro
+
+    h1{
+        color: #000;
+        font-size: 30px;
+        display: block;
+        font-family: verdana;
+        margin: 0 auto;
+        position: relative;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom:20px;
+        padding: 10px;
+    }
+    .div-input {
+        position: relative;
+        padding: 15px;
+    }
+    .div-form{
+        color: rgb(188, 0, 0);
+        font-weight: bold;
+        font-size: 12px;
+        z-index: 9999999;
+        position: relative;
+        height: 0px;
+        text-align: left;
+        text-indent: 70px;
+        bottom:12px;
+    }
+        label {
+            color: #757272 !important;
+            position: absolute;
+            margin: 10px auto !important;
+            left: 50px;
+        }
+
+        ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: #ccc !important;
+            opacity: 1; /* Firefox */
+        } 
+
+  
+    .bg-fundo {
+        background-color: #fff;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 60%;
+        position: relative;
+        margin: 40px auto;
+        min-height: 550px;
+        padding: 10px 10px 10px 10px;
+        -moz-box-shadow:0 0 10px #00000066;
+        -webkit-box-shadow:0 0 10px #00000066;
+        box-shadow:0 0 10px #00000066;
+    }
+    .bg-content {
+        width: 100%;
+        margin: 40px auto;
+
+        input{
+            height: 40px;
+            border-radius: 20px;
+            background:  rgba(255, 255, 255, 0.25);
+            color: #757272;
+            width:90%  !important;
+            text-indent: 50px;            
+            border: 1px solid;
+            &.ng-invalid.ng-touched {
+                border: 1px solid red;
+            }
+
+        }
+    }
+   
+   
+    a{
+        margin: 0 auto;
+        display: inline-block;
+        position: relative;
+        width:48.5%;
+        text-align: center;
+        color:#fff;
+        font-size: 12px;
+        text-decoration: none;
+        &:hover{
+            color: rgb(185, 0, 0);
+        }
+    }
+    .item-ios {
+        border-top:0 !important;
+    }
+
+        
+
+   .btn-acao {
+        margin: 20px auto;
+   }
+    .button-primary{
+        height: 40px;
+        border-radius: 10px;
+        position: relative;
+        width: 40%;
+        background-color: #0074d9;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        
+    }
+    .button-danger{
+        height: 40px;
+        border-radius: 10px;
+        position: relative;
+        width: 40%;
+        background-color: #de0000;
+        /* padding: 10px 10px 10px 10px; */
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        
+        
+    }
+    button:disabled {
+        background-color: #0077d95b !important;
+        cursor:no-drop !important;
+        
+    }
+    
+}
